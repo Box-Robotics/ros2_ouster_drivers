@@ -73,6 +73,7 @@ enum timestamp_mode
   TIME_FROM_INTERNAL_OSC = 1,
   TIME_FROM_SYNC_PULSE_IN,
   TIME_FROM_PTP_1588,
+  TIME_FROM_SYS_CLK,
   TIME_FROM_ROS_RECEPTION = 99
 };
 
@@ -90,11 +91,12 @@ const std::array<std::pair<lidar_mode, std::string>, 5> lidar_mode_strings = {
     {MODE_1024x20, "1024x20"},
     {MODE_2048x10, "2048x10"}}};
 
-const std::array<std::pair<timestamp_mode, std::string>, 4>
+const std::array<std::pair<timestamp_mode, std::string>, 5>
 timestamp_mode_strings = {
   {{TIME_FROM_INTERNAL_OSC, "TIME_FROM_INTERNAL_OSC"},
     {TIME_FROM_SYNC_PULSE_IN, "TIME_FROM_SYNC_PULSE_IN"},
     {TIME_FROM_PTP_1588, "TIME_FROM_PTP_1588"},
+    {TIME_FROM_SYS_CLK, "TIME_FROM_SYS_CLK"},
     {TIME_FROM_ROS_RECEPTION, "TIME_FROM_ROS_RECEPTION"}}};
 
 const size_t lidar_packet_bytes = 12608;

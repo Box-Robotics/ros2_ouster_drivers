@@ -20,6 +20,7 @@ ouster_driver:
     #   TIME_FROM_INTERNAL_OSC
     #   TIME_FROM_SYNC_PULSE_IN
     #   TIME_FROM_PTP_1588
+    #   TIME_FROM_SYS_CLK
     #   TIME_FROM_ROS_RECEPTION
     #
     # (See this project's README and/or the Ouster Software Guide for more

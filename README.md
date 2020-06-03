@@ -59,10 +59,10 @@ the data frames.
 
 ### Timestamp Modes
 
-Referring to the parameter table above, the `timestamp_mode` parameter has four
+Referring to the parameter table above, the `timestamp_mode` parameter has five
 allowable options (as of this writing). They are: `TIME_FROM_INTERNAL_OSC`,
-`TIME_FROM_SYNC_PULSE_IN`, `TIME_FROM_PTP_1588`, `TIME_FROM_ROS_RECEPTION`. A
-description of each now follows.
+`TIME_FROM_SYNC_PULSE_IN`, `TIME_FROM_PTP_1588`, `TIME_FROM_SYS_CLK`,
+`TIME_FROM_ROS_RECEPTION`. A description of each now follows.
 
 #### `TIME_FROM_INTERNAL_OSC`
 
@@ -92,6 +92,12 @@ event happens the counter will either jump forward to match the new time, or
 slow itself down. It is reported at ns resolution (there is both a second and
 nanosecond register in every UDP packet), but the minimum increment
 varies. Accuracy is +/- <50 us from the 1588 master.
+
+### `TIME_FROM_SYS_CLK`
+
+Stamp the points with the UTC time stamp from the operating system clock on the
+sensor. If synchronized with an external PTP timesource, this should be an
+accurate (kept in sync with a feedback servo) absolute wall clock time.
 
 #### `TIME_FROM_ROS_RECEPTION`
 
